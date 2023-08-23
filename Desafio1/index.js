@@ -25,12 +25,12 @@ class ProductManager{
         this.products.push(newProduct);
         console.log("producto agregado");
     }
-    getProductById(code) {
-        const products = this.products.find(p => p.code === code);
-        if (!products) {
-            throw new Error(`Producto no encontrado ${code}`);
-        }
-        return products;
+    getProductById(addId) {
+       if (this.products.find((prod)=> prod.id === addId)){
+        console.log(this.products.find((prod)=>prod.id === addId));
+       }else{
+        console.log("Producto no encontrado");
+       }
     }
 }
 
@@ -39,4 +39,5 @@ manager.addProduct("calzas",undefined, 500, "abc123", undefined);
 manager.addProduct("buzos","buena calidad", 600, "sin imagen", "abc123");
 manager.addProduct("remeras", 500)
 manager.addProduct("buzos", "color blanco", 1000, "sin imagen", "abc123", 25)
+manager.addProduct("no hay nada")
 
